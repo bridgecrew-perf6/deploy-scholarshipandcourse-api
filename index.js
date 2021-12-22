@@ -36,7 +36,7 @@ const fileFilter = (req, file, cb) => {
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: ['https://scholarshipandcourse.herokuapp.com']
+  origin: ['https://gifted-darwin-2b84cc.netlify.app/', 'https://scholarshipandcourse.herokuapp.com']
 }));
 app.use(express.json());
 
