@@ -102,6 +102,7 @@ const login = async (req, res, next) => {
         });
         
         return res.send({
+          token,
           message: 'success',
         });
       });
