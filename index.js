@@ -36,7 +36,7 @@ const fileFilter = (req, file, cb) => {
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000']
+  origin: ['http://localhost:3000', 'https://scholarshipandcourse.herokuapp.com/']
 }));
 app.use(express.json());
 
