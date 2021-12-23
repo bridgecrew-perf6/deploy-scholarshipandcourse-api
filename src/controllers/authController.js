@@ -116,7 +116,8 @@ const login = async (req, res, next) => {
 }
 
 const logout = async (req, res, next) => {
-  res.cookie('jwt', '', {maxAge: 0})
+  const token = '';
+  res.setHeader('Set-Cookie',[`jwt=${token};  Path=/;HttpOnly; maxAge=0;SameSite=None;Secure=true;`]);
 
   res.send({
       message: 'success'
