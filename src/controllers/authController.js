@@ -96,10 +96,17 @@ const login = async (req, res, next) => {
           expiresIn: '8h'
         });
 
-        res.cookie('jwt', token, {
-          httpOnly: true,
-          maxAge: 24 * 60 * 60 * 1000,
-        });
+        if (sails.config.environment === 'development'){
+          res.setHeader('Set-Cookie',[`token=${token};  Path=/;HttpOnly; maxAge=86400000;SameSite=false;`]);
+        } else {
+          res.setHeader('Set-Cookie',[`token=${token};  Path=/;HttpOnly; maxAge=86400000;SameSite=None;Secure=true;`]);
+        }
+
+        // res.cookie('jwt', token, {
+        //   httpOnly: true,
+        //   maxAge: 24 * 60 * 60 * 1000,
+        //   secure
+        // });
         
         return res.send({
           token,
