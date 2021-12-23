@@ -36,7 +36,7 @@ const fileFilter = (req, file, cb) => {
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: ['https://infallible-banach-bd6b28.netlify.app', 'https://scholarshipandcourse.herokuapp.com']
+  origin: ['https://scholarshipandcourse.netlify.app', 'https://scholarshipandcourse.herokuapp.com']
 }));
 app.use(express.json());
 
